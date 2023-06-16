@@ -31,7 +31,7 @@ a {
 
 a:hover {
     color: var(--bg-color);
-    transition: 0.2s;
+    transition: var(--transition-delay);
     transition-delay: calc(4*var(--transition-delay));
 }
 
@@ -50,49 +50,51 @@ a::before {
 
 a:hover::before {
     transform: scale(1);
-    transition: .5s;
+    transition: calc(2.5*var(--transition-delay));
     transition-delay: calc(4*var(--transition-delay));
 }
 
-a::after{
+a::after {
     content: '\f303';
     font-family: fontAwesome;
     position: absolute;
     top: -22px;
     left: 0;
+    color: #262626;
 }
 
-a:hover::after{
-    animation: draw calc(4.5*var(--transition-delay)) linear forwards;
+a:hover::after {
+    animation: draw calc(4.9*var(--transition-delay)) linear forwards;
 }
+
 @keyframes draw {
-    0%{
-        top: -22px;
+    0% {
+        top: -23px;
         left: 0;
     }
 
-    20%{
-        top: -22px;
+    20% {
+        top: -23px;
         left: 100%;
     }
 
-    40%{
-        top: calc(100% - 22px);
+    40% {
+        top: calc(100% - 23px);
         left: 100%;
     }
 
-    60%{
-        top: calc(100% - 22px);
+    60% {
+        top: calc(100% - 23px);
         left: 0;
     }
 
-    80%{
-        top: -22px;
+    80% {
+        top: -23px;
         left: 0;
     }
 
-    100%{
-        top: calc(100% - 22px);
+    100% {
+        top: calc(100% - 23px);
         left: 100%;
     }
 }
@@ -117,7 +119,7 @@ a span:nth-child(1) {
 
 a:hover span:nth-child(1) {
     transform: scaleX(1);
-    transition: 0.2s;
+    transition: var(--transition-delay);
     transition-delay: calc(0*var(--transition-delay));
 }
 
@@ -130,7 +132,7 @@ a span:nth-child(3) {
 
 a:hover span:nth-child(3) {
     transform: scaleX(1);
-    transition: 0.2s;
+    transition: var(--transition-delay);
     transition-delay: calc(2*var(--transition-delay));
 }
 
@@ -150,7 +152,7 @@ a span:nth-child(2) {
 
 a:hover span:nth-child(2) {
     transform: scaleY(1);
-    transition: 0.2s;
+    transition: var(--transition-delay);
     transition-delay: calc(1*var(--transition-delay));
 }
 
@@ -163,6 +165,6 @@ a span:nth-child(4) {
 
 a:hover span:nth-child(4) {
     transform: scaleY(1);
-    transition: 0.2s;
+    transition: var(--transition-delay);
     transition-delay: calc(3*var(--transition-delay));
 }
